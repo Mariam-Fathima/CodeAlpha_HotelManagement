@@ -68,7 +68,8 @@ public class HotelReservationSystem {
             String guestName = scanner.next();
 
             Reservation reservation = new Reservation(reservationIdCounter++, guestName, selectedRoom);
-            reservations.put(reservation.getReservationId(), reservation);
+            reservations.put(String.valueOf(reservation.getReservationId()), reservation);
+
             selectedRoom.setReserved(true);
 
             System.out.println("Reservation successful. Your reservation ID is: " + reservation.getReservationId());
